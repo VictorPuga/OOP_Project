@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		321388E72577009400690761 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321388E62577009400690761 /* main.cpp */; };
+		321388F62577019300690761 /* Store.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321388F52577019300690761 /* Store.cpp */; };
+		321388FA257701FF00690761 /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321388F9257701FF00690761 /* Product.cpp */; };
+		321388FF2577022800690761 /* Wallet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321388FE2577022800690761 /* Wallet.cpp */; };
+		321389042577026200690761 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321389032577026200690761 /* Client.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		321388E32577009400690761 /* OOP_Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OOP_Project; sourceTree = BUILT_PRODUCTS_DIR; };
 		321388E62577009400690761 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		321388F42577019300690761 /* Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		321388F52577019300690761 /* Store.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Store.cpp; sourceTree = "<group>"; };
+		321388F9257701FF00690761 /* Product.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Product.cpp; sourceTree = "<group>"; };
+		321388FC2577020E00690761 /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		321388FD2577022100690761 /* Wallet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
+		321388FE2577022800690761 /* Wallet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Wallet.cpp; sourceTree = "<group>"; };
+		321389022577024B00690761 /* Client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		321389032577026200690761 /* Client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +70,48 @@
 			isa = PBXGroup;
 			children = (
 				321388E62577009400690761 /* main.cpp */,
+				321389072577027E00690761 /* Store */,
+				321389092577028500690761 /* Product */,
+				3213890A2577029200690761 /* Wallet */,
+				3213890C2577029C00690761 /* Client */,
 			);
 			path = OOP_Project;
+			sourceTree = "<group>";
+		};
+		321389072577027E00690761 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				321388F42577019300690761 /* Store.h */,
+				321388F52577019300690761 /* Store.cpp */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		321389092577028500690761 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				321388FC2577020E00690761 /* Product.h */,
+				321388F9257701FF00690761 /* Product.cpp */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		3213890A2577029200690761 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				321388FD2577022100690761 /* Wallet.h */,
+				321388FE2577022800690761 /* Wallet.cpp */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		3213890C2577029C00690761 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				321389022577024B00690761 /* Client.h */,
+				321389032577026200690761 /* Client.cpp */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321388FF2577022800690761 /* Wallet.cpp in Sources */,
 				321388E72577009400690761 /* main.cpp in Sources */,
+				321389042577026200690761 /* Client.cpp in Sources */,
+				321388FA257701FF00690761 /* Product.cpp in Sources */,
+				321388F62577019300690761 /* Store.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

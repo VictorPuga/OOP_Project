@@ -1,14 +1,7 @@
-//
-//  main.cpp
-//  OOP_Project
-//
-//  Created by Víctor Manuel Puga Ruiz on 01/12/20.
-//
-
 #include <iostream>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    cout << "Hello, World!\n";
     return 0;
 }
