@@ -10,7 +10,7 @@
 		321388E72577009400690761 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321388E62577009400690761 /* main.cpp */; };
 		321388F62577019300690761 /* Store.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321388F52577019300690761 /* Store.cpp */; };
 		321388FA257701FF00690761 /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321388F9257701FF00690761 /* Product.cpp */; };
-		321388FF2577022800690761 /* Wallet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321388FE2577022800690761 /* Wallet.cpp */; };
+		321388FF2577022800690761 /* PaymentMethod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321388FE2577022800690761 /* PaymentMethod.cpp */; };
 		321389042577026200690761 /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 321389032577026200690761 /* Client.cpp */; };
 /* End PBXBuildFile section */
 
@@ -33,8 +33,8 @@
 		321388F52577019300690761 /* Store.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Store.cpp; sourceTree = "<group>"; };
 		321388F9257701FF00690761 /* Product.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Product.cpp; sourceTree = "<group>"; };
 		321388FC2577020E00690761 /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		321388FD2577022100690761 /* Wallet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
-		321388FE2577022800690761 /* Wallet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Wallet.cpp; sourceTree = "<group>"; };
+		321388FD2577022100690761 /* PaymentMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentMethod.h; sourceTree = "<group>"; };
+		321388FE2577022800690761 /* PaymentMethod.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PaymentMethod.cpp; sourceTree = "<group>"; };
 		321389022577024B00690761 /* Client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 		321389032577026200690761 /* Client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +72,7 @@
 				321388E62577009400690761 /* main.cpp */,
 				321389072577027E00690761 /* Store */,
 				321389092577028500690761 /* Product */,
-				3213890A2577029200690761 /* Wallet */,
+				3213890A2577029200690761 /* PaymentMethod */,
 				3213890C2577029C00690761 /* Client */,
 			);
 			path = OOP_Project;
@@ -96,13 +96,13 @@
 			path = Product;
 			sourceTree = "<group>";
 		};
-		3213890A2577029200690761 /* Wallet */ = {
+		3213890A2577029200690761 /* PaymentMethod */ = {
 			isa = PBXGroup;
 			children = (
-				321388FD2577022100690761 /* Wallet.h */,
-				321388FE2577022800690761 /* Wallet.cpp */,
+				321388FD2577022100690761 /* PaymentMethod.h */,
+				321388FE2577022800690761 /* PaymentMethod.cpp */,
 			);
-			path = Wallet;
+			path = PaymentMethod;
 			sourceTree = "<group>";
 		};
 		3213890C2577029C00690761 /* Client */ = {
@@ -170,7 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				321388FF2577022800690761 /* Wallet.cpp in Sources */,
+				321388FF2577022800690761 /* PaymentMethod.cpp in Sources */,
 				321388E72577009400690761 /* main.cpp in Sources */,
 				321389042577026200690761 /* Client.cpp in Sources */,
 				321388FA257701FF00690761 /* Product.cpp in Sources */,
