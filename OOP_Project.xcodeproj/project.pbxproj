@@ -37,6 +37,7 @@
 		321388FE2577022800690761 /* PaymentMethod.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PaymentMethod.cpp; sourceTree = "<group>"; };
 		321389022577024B00690761 /* Client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 		321389032577026200690761 /* Client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
+		32B2A55B257757A300CAA188 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 		321388DA2577009400690761 = {
 			isa = PBXGroup;
 			children = (
+				32B2A55B257757A300CAA188 /* README.md */,
 				321388E52577009400690761 /* OOP_Project */,
 				321388E42577009400690761 /* Products */,
 			);
