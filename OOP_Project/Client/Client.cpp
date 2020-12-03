@@ -16,10 +16,31 @@ string Client::getName() {
     return _name;
 }
 
-PaymentMethod Client::getCreditCard() {
-    return _creditCard;
+void Client::buy(string card, float price) {
+    if (card == "CREDIT") {
+        _creditCard.makePayment(price);
+    }
+    else if (card == "GIFT") {
+        _giftCard.makePayment(price);
+    }
 }
 
-PaymentMethod Client::getGiftCard() {
-    return _giftCard;
+bool Client::canBuy(string card, float price) {
+    if (card == "CREDIT") {
+        return _creditCard.canBuy(price);
+    }
+    else if (card == "GIFT") {
+        return _giftCard.canBuy(price);
+    }
+    return false;
+}
+
+float Client::getBalance(string card) {
+    if (card == "CREDIT") {
+        return _creditCard.getBalance();
+    }
+    else if (card == "GIFT") {
+        return _giftCard.getBalance();
+    }
+    return false;
 }

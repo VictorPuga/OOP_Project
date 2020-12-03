@@ -15,11 +15,12 @@ private:
 public:
     Store();
 
-    void open();
-    void close();
-    void registerSale(float price);
-    void showProducts();
-    
     Product getProduct(int id);
     float getTodayBalance();
+
+    void open();
+    void close();
+    void registerSale(int productId);
+    void showProducts();
+    
 };

@@ -7,103 +7,161 @@ using namespace std;
 #include "PaymentMethod.h"
 #include "Client.h"
 
+void noStock() {
+    cout << "This product is sold out" << endl << endl;
+}
+
+void noBalance() {
+    cout << "This payment method does't have enough balance" << endl << endl;
+}
+
+void success(string card, float balance) {
+    cout
+        << "Payment successfull" << endl
+        << "You now have $" << balance << " in " << card << " card" << endl << endl;
+}
+
 int main() {
     Store walmart;
-    Client client("John", 300, 5);
+    Client client("John", 300, 50);
+    
+    int prodId;
+    string method;
     
     walmart.open();
     cout << "Welcome to Walmart Online Store, what do you want to buy?" << endl;
     walmart.showProducts();
     
-    int prodId;
-    Product prod;
-    bool buy = true;
+    // try to buy product with id 2 with credit card
+    // expected: success
+    prodId = 2;
+    method = "CREDIT";
     
-    while (true) {
-        cout << "Select a number: ";
-        cin >> prodId;
-
-        if (prodId >= 0 && prodId <= 9) {
-           prod = walmart.getProduct(prodId);
-            if (prod.isAvailable()) {
-                break;
-            }
-            else {
-                string another;
-                cout
-                    << "This product is out of stock. Do you want to buy another one?" << endl
-                    << "(Y/N): ";
-                cin >> another;
-                if (another == "N") {
-                    buy = false;
-                    break;
-                }
-            }
-        }
-    }
-    
-    // if they select `N`, this will be skipped
-    if (buy) {
-        cout
-            << endl
-            << "Choose a payment method" << endl
-            << "0) Credit card" << endl
-            << "1) Gift card" << endl;
-        
-        int method;
-        
-        while (true) {
-            cout << "Select a number: ";
-            cin >> method;
+    Product prod1 = walmart.getProduct(prodId);
+    // this can't be a function, because we would need to pass pointers
+    // to update the quantities and balances
+    if (prod1.isAvailable()) {
+        if (client.canBuy(method, prod1.getPrice())) {
+            client.buy(method, prod1.getPrice());
+            walmart.registerSale(prodId);
             
-            if (method == 0) {
-                PaymentMethod card = client.getCreditCard();
-                // this can't be separated into a function because we need to update the objects
-                if (card.canBuy(prod.getPrice())) {
-                    card.makePayment(prod.getPrice());
-                    prod.sell();
-                    walmart.registerSale(prod.getPrice());
-                    
-                    cout
-                        << "Payment successful" << endl
-                        << "Your new balance is $" << card.getBalance() << endl;
-                }
-                else {
-                    cout << "This payment method doesn't have enough funds to buy" << endl;
-                }
-                break;
-            }
-            else if (method == 1) {
-                PaymentMethod card = client.getCreditCard();
-                if (card.canBuy(prod.getPrice())) {
-                    card.makePayment(prod.getPrice());
-                    prod.sell();
-                    walmart.registerSale(prod.getPrice());
-                    
-                    cout
-                        << "Payment successful" << endl
-                        << "Your new balance is $" << card.getBalance() << endl;
-                }
-                else {
-                    cout << "This payment method doesn't have enough funds to buy" << endl;
-                }
-                break;
-            }
+            success(method, client.getBalance(method));
+        } else {
+            noBalance();
         }
+    } else {
+        noStock();
     }
     
+    // try to buy product with id 3 with gift card
+    // expected: success
+    prodId = 3;
+    method = "GIFT";
+    
+    Product prod2 = walmart.getProduct(prodId);
+    
+    if (prod2.isAvailable()) {
+        if (client.canBuy(method, prod2.getPrice())) {
+            client.buy(method, prod2.getPrice());
+            walmart.registerSale(prodId);
+
+            success(method, client.getBalance(method));
+        } else {
+            noBalance();
+        }
+    } else {
+        noStock();
+    }
+    
+    // try to buy product with id 0 with credit card
+    // expected: no stock
+    prodId = 0;
+    method = "CREDIT";
+    
+    Product prod3 = walmart.getProduct(prodId);
+    
+    if (prod3.isAvailable()) {
+        if (client.canBuy(method, prod3.getPrice())) {
+            client.buy(method, prod3.getPrice());
+            walmart.registerSale(prodId);
+            
+            success(method, client.getBalance(method));
+        } else {
+            noBalance();
+        }
+    } else {
+        noStock();
+    }
+    
+    // try to buy product with id 5 with gift card
+    // expected: success
+    prodId = 5;
+    method = "GIFT";
+    
+    Product prod4 = walmart.getProduct(prodId);
+
+    if (prod4.isAvailable()) {
+        if (client.canBuy(method, prod4.getPrice())) {
+            client.buy(method, prod4.getPrice());
+            walmart.registerSale(prodId);
+
+            success(method, client.getBalance(method));
+        } else {
+            noBalance();
+        }
+    } else {
+        noStock();
+    }
+    
+    // try to buy product with id 9 with gift card
+    // expected: no balance
+    prodId = 9;
+    method = "GIFT";
+    
+    Product prod5 = walmart.getProduct(prodId);
+
+    if (prod5.isAvailable()) {
+        if (client.canBuy(method, prod5.getPrice())) {
+            client.buy(method, prod5.getPrice());
+            walmart.registerSale(prodId);
+
+            success(method, client.getBalance(method));
+        } else {
+            noBalance();
+        }
+    } else {
+        noStock();
+    }
+    
+    // try to buy product with id 9 with credit card
+    // expected: success
+    prodId = 9;
+    method = "CREDIT";
+    
+    Product prod6 = walmart.getProduct(prodId);
+
+    if (prod6.isAvailable()) {
+        if (client.canBuy(method, prod6.getPrice())) {
+            client.buy(method, prod6.getPrice());
+            walmart.registerSale(prodId);
+
+            success(method, client.getBalance(method));
+        } else {
+            noBalance();
+        }
+    } else {
+        noStock();
+    }
     
     cout
-        << endl
         << "Thanks for visiting Walmart. See you soon :)"
         << endl;
-
+    
     walmart.close();
     
     cout
         << endl
         << "Sales report:" << endl
         << "$" << walmart.getTodayBalance() << " sold today" << endl;
-    
     return 0;
 }

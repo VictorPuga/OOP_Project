@@ -3,13 +3,7 @@ using namespace std;
 
 #include "Product.h"
 
-Product::Product() {
-    _id = -1;
-    _quantity = 0;
-    _price = 0;
-}
-
-void Product::setData(int id, string name, int quantity, float price) {
+Product::Product(int id, string name, int quantity, float price) {
     _id = id;
     _name = name;
     _quantity = quantity;

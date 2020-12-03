@@ -11,11 +11,8 @@ private:
     float _price;
 
 public:
-    Product();
-    
-    // set all the properties at once
-    void setData(int id, string name, int quantity, float price);
-    
+    Product(int id, string name, int quantity, float price);
+
     int getId();
     string getName();
     int getQuantity();

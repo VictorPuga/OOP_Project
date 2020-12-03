@@ -5,52 +5,22 @@ using namespace std;
 #include "Store.h"
 #include "Product.h"
 
-Store::Store() {
+Store::Store()
+// you need to explicitly initialize `_products`
+: _products {
+    Product(0, "Prod A", 0, 30.0),
+    Product(1, "Prod B", 0, 40.0),
+    Product(2, "Prod C", 8, 50.0),
+    Product(3, "Prod D", 7, 10.0),
+    Product(4, "Prod E", 6, 15.0),
+    Product(5, "Prod F", 5, 12.0),
+    Product(6, "Prod G", 4, 21.0),
+    Product(7, "Prod H", 3, 55.0),
+    Product(8, "Prod I", 2, 90.0),
+    Product(9, "Prod J", 1, 200.0),
+} {
     _name = "Walmart";
-    
-    string productNames [10] = {
-        "Prod A",
-        "Prod B",
-        "Prod C",
-        "Prod D",
-        "Prod E",
-        "Prod F",
-        "Prod G",
-        "Prod H",
-        "Prod I",
-        "Prod J",
-    };
-
-    int productQuantities [10] = {
-        0,
-        0,
-        8,
-        7,
-        6,
-        5,
-        4,
-        3,
-        2,
-        1,
-    };
-
-    float productPrices [10] = {
-        30.0,
-        40.0,
-        50.0,
-        10.0,
-        15.0,
-        12.0,
-        21.0,
-        55.0,
-        90.0,
-        400.0,
-    };
-
-    for (int i = 0; i < 10; i++) {
-        // "initialize" products
-        _products[i].setData(i, productNames[i], productQuantities[i], productPrices[i]);
-    }
+    _closed = true;
 }
 
 void Store::open() {
@@ -61,9 +31,10 @@ void Store::close() {
     _closed = true;
 }
 
-void Store::registerSale(float price) {
+void Store::registerSale(int productId) {
     if (!_closed) {
-        _todayBalance += price;
+        _products[productId].sell();
+        _todayBalance += _products[productId].getPrice();
     }
 }
 
@@ -79,8 +50,9 @@ void Store::showProducts() {
             << " ("
             << prod.getQuantity()
             << " in stock)"
-            << endl;
+        << endl;
     }
+    cout << endl;
 }
 
 Product Store::getProduct(int id) {

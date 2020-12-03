@@ -15,6 +15,8 @@ public:
     Client(string name, float creditBalance, float giftBalance);
 
     string getName();
-    PaymentMethod getCreditCard();
-    PaymentMethod getGiftCard();
+    float getBalance(string card);
+
+    void buy(string card, float price);
+    bool canBuy(string card, float price);
 };
