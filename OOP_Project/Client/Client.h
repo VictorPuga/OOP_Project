@@ -12,7 +12,7 @@ private:
     PaymentMethod _giftCard;
     
 public:
-    Client(string name, float creditBalance, float giftBalance);
+    Client(string name, float creditCardBalance, float giftCardBalance);
 
     string getName();
     float getBalance(string card);

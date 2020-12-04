@@ -4,10 +4,10 @@ using namespace std;
 #include "Client.h"
 #include "PaymentMethod.h"
 
-Client::Client(string name, float creditBalance, float giftBalance)
-// You need to explicityly initialize the `PaymentMethod`s
-    : _creditCard("CREDIT", creditBalance),
-      _giftCard("GIFT", giftBalance)
+Client::Client(string name, float creditCardBalance, float giftCardBalance)
+// we need to explicityly initialize the `PaymentMethod`s
+:   _creditCard("CREDIT", creditCardBalance),
+    _giftCard("GIFT", giftCardBalance)
 {
     _name = name;
 }
@@ -42,5 +42,5 @@ float Client::getBalance(string card) {
     else if (card == "GIFT") {
         return _giftCard.getBalance();
     }
-    return false;
+    return -1;
 }
